@@ -13,7 +13,4 @@ export class QuestionEntity {
 
   @Column()
   theTrueVariant: number;
-
-  // @Column({ type: 'enum', enum: Role, default: Role.USER })
-  // role: Role;
 }

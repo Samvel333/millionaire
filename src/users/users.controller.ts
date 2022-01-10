@@ -26,9 +26,4 @@ export class UsersController {
   createUser(@Body() createUserDto: CreateUserDto) {
     return this.usersService.createUser(createUserDto);
   }
-
-  // @Post('question')
-  // addQuestion(@Body() createQuestionDto: CreateQuestionDto){
-  //     return this.usersService.createQuestion(createQuestionDto)
-  // }
 }
