@@ -63,12 +63,21 @@ export class QuestionService {
     return 'Question Added Successfully!';
   }
 
-  //   async update(id: string, updateDto: UpdateQuestionDto) {
-  //     const question = await this.getQuestionById(id)
-  //     if (!question) {
-  //       throw new NotFoundException();
-  //     }
-
-  //     return post;
-  //   }
+  async updateQuestion(
+    id: string,
+    createQuestionDto: CreateQuestionDto,
+  ): Promise<string> {
+    const question = await this.getQuestionById(id);
+    if (createQuestionDto.gamequestion) {
+      question.gamequestion = createQuestionDto.gamequestion;
+    }
+    if (createQuestionDto.answers) {
+      question.answers = createQuestionDto.answers;
+    }
+    if (createQuestionDto.theTrueVariant) {
+      question.theTrueVariant = createQuestionDto.theTrueVariant;
+    }
+    await this.questionRepository.save(question);
+    return 'Question updated!';
+  }
 }

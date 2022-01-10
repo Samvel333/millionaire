@@ -37,12 +37,16 @@ export class QuestionController {
     return this.questionService.getQuestionById(id);
   }
 
+  @Patch('/:id')
+  updateQuestion(
+    @Param('id') id: string,
+    @Body() createQuestionDto: CreateQuestionDto,
+  ): Promise<string> {
+    return this.questionService.updateQuestion(id, createQuestionDto);
+  }
+
   @Delete('/:id')
   deleteQuestion(@Param('id') id: string): Promise<string> {
     return this.questionService.remove(id);
   }
-  // @Patch('update')
-  // updateQuestion(@Body() updateQuestionDto: CreateQuestionDto){
-
-  // }
 }
