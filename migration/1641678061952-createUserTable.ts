@@ -30,9 +30,9 @@ export class createUserTable1641678061952 implements MigrationInterface {
           },
           {
             name: 'role',
-            type: 'string',
-            isNullable: false,
-            default: Role.User
+            type: 'enum',
+            enum: ['user', 'admin'],
+            default: "'user'",
           },
         ],
       }),

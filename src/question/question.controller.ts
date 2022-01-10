@@ -14,9 +14,11 @@ import { Role } from 'src/auth/helpers/role.enum';
 import { Roles } from 'src/auth/helpers/roles.decorator';
 import { QuestionEntity } from './question.entity';
 import { QuestionService } from './question.service';
+import { PassportModule } from '@nestjs/passport';
+import { RolesGuard } from 'src/auth/helpers/roles.guard';
 
 @Controller('question')
-@UseGuards(AuthGuard())
+@UseGuards(AuthGuard(), RolesGuard)
 @Roles(Role.Admin)
 export class QuestionController {
   constructor(private questionService: QuestionService) {}

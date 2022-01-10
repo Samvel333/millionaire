@@ -10,7 +10,7 @@ export class GameService {
         private gameRepository: GameRepository,
       ) {}
 
-    async startGame(id:string, user_username:string, answer:number){
+    async startGame(id:string, user_username:string, score:number){
         
      //....
     

@@ -9,8 +9,5 @@ export class GameEntity {
   user_username: string;
 
   @Column()
-  user_score: string;
-
-  @Column()
-  theTrueVariant: number;
+  score: string;
 }
