@@ -22,7 +22,6 @@ export class QuestionController {
   constructor(private questionService: QuestionService) {}
 
   @Get()
-  @Roles(Role.Admin)
   getAllQuestions() {
     return this.questionService.findAll();
   }
