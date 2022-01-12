@@ -3,13 +3,14 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from 'src/auth/auth.module';
+import { QuestionRepository } from 'src/question/question.repository';
 import { GameController } from './game.controller';
 import { GameRepository } from './game.repository';
 import { GameService } from './game.service';
 
 @Module({
   controllers: [GameController],
-  providers: [GameService],
+  providers: [GameService, QuestionRepository],
   imports: [
     TypeOrmModule.forFeature([GameRepository]),
     AuthModule,

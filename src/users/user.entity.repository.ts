@@ -8,6 +8,7 @@ import { EntityRepository, Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { UserEntity } from './user.entity';
 import { CreateUserDto } from './dto/create.user.dto';
+import { Role } from 'src/auth/helpers/role.enum';
 
 @EntityRepository(UserEntity)
 export class UsersRepository extends Repository<UserEntity> {
@@ -29,5 +30,5 @@ export class UsersRepository extends Repository<UserEntity> {
     });
     await this.save(user);
     return 'User Created Successfully!';
-}
+  }
 }
